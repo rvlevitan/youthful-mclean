@@ -1,0 +1,85 @@
+.project-header {
+    margin-top:-0.4166666666666667VW;
+    margin-bottom: 1.8055555555555554VW;
+
+     @include medium-desktop {
+        margin-top: -0.3125VW;
+    }
+
+    @include small-desktop {
+        margin-top: -0.1953125VW;
+        margin-bottom: -0.48828125VW;
+    }
+
+    @include tablet {
+        padding-top: 0.13020833333333331VW;
+        margin-bottom: -0.9114583333333334VW;
+    }
+
+    @include mobile {
+        padding-top: 0.8VW;
+        margin-bottom:-3.2VW;
+    }
+
+    &__text-align-right{
+        position:relative;
+        text-align: right;
+    }
+
+    &__year {
+        position: relative;
+        transform:translateX(0.4166666666666667VW);
+
+        @include tablet {
+            transform:translateX(0.5208333333333333VW);
+        }
+
+        @include mobile {
+            transform:translateX(1.0666666666666667VW);
+        }
+    }
+
+    &__dash {
+        position: absolute;
+        width: get-vw(120px);
+        height: get-vw(13px);
+        right: 0;
+        bottom: 0;
+        transform: translateY(get-vw(77px));
+
+        @include mobile {
+            width: 13.066666666666665vw;
+            height: 1.3333333333333335vw;
+            transform: translateY(0);
+            margin-top: 8vw;
+            margin-bottom: 7.199999999999999vw;
+            margin-left: auto;
+            position: relative;
+
+        }
+    }
+
+    &__title {
+        max-width: 57.291666666666664VW;
+        transform:translateX(-0.2777777777777778VW);
+
+        @include medium-desktop {
+            max-width: 56.95312500000001VW;
+        }
+
+        @include small-desktop {
+            max-width: 56.4453125VW;
+            transform:translateX(-0.29296875VW);
+        }
+
+        @include tablet {
+            transform:translateX(-0.6510416666666667VW);
+        }
+        
+        @include mobile {
+            max-width: 16em;
+            transform:translateX(-1.0666666666666667VW);
+        }
+    }
+
+}

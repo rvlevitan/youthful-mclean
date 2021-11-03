@@ -1,0 +1,190 @@
+:root {
+    --color: #ffffff;
+    --bg-color: #000000;
+    --font: Neue Montreal, Helvetica-Neue, Helvetica, Arial, sans-serif;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@import "../styles/mixins/px-to-rem.scss";
+@import "../styles/mixins/breakpoints.scss";
+@import "../styles/global/typography.scss";
+
+body {
+  background: var(--bg-color);
+  color: var(--color);
+  font-family: var(--font);
+  margin:0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.scrollbar-track {
+  display:none!important;
+}
+
+.scroll-container {
+  overflow: auto;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.smooth-scroll {
+  overflow: hidden;
+  width: 100%;
+  z-index: 10;
+  justify-content: center;  
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+.main {
+  position: relative;
+}
+
+.contain {
+  padding: 0 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 12px;
+}
+
+video {
+  vertical-align: top;
+  position: relative;
+}
+
+.block {
+  opacity: 0.4;
+  border: 1px solid #000000;
+  background:linear-gradient(to bottom right, transparent calc(50% - 1px), black calc(50% - 1px), black 50%, transparent 50%) ;
+}
+
+.module-spacer {
+  margin-bottom: 12px;
+}
+
+.project-content {
+  margin-top: 26px;
+  margin-bottom:90px;
+  
+  @include tablet {
+      margin-bottom: 60px; 
+  }
+
+  @include mobile {
+      margin-bottom: 42px; 
+  }
+}
+
+.tl-wrapper.tl-wrapper--mount.tl-wrapper-status--entering .rl-transition-wrapper {
+  transform: translateY(100vh);
+}
+
+@import "../components/navigation/navigation.scss";
+@import "../components/hero/hero.scss";
+@import "../components/projects/projects.scss";
+@import "../components/footer/footer.scss";
+@import "../components/transition/transition.scss";
+
+@import "../components/bio/bio.scss";
+@import "../components/project-detail/project-header/project-header.scss";
+@import "../components/project-detail/image-block/image-block.scss";
+@import "../components/project-detail/large-text/large-text.scss";
+@import "../components/project-detail/full-width-image//full-width-image.scss";
+@import "../components/project-detail/two-images/two-images.scss";
+@import "../components/project-detail/small-text/small-text.scss";
+@import "../components/project-detail/spacer/spacer.scss";
+@import "../components/project-detail/credits/credits.scss";
+@import "../components/project-detail/transporter/transporter.scss";
+@import "../components/password/password.scss";
+
+
+/* Project Detail */
+
+
+/* 404 */
+.error {
+  background: #fff;
+  height: 100vh;
+  color:#000;
+  padding: rem(12px);
+  box-sizing: border-box;
+  overflow: hidden;
+
+  &__message {
+    height:100%;
+  }
+
+  &__block {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    background: linear-gradient(to top right, transparent calc(50% - 1px), #000, transparent calc(50% + 0.5px));
+  }
+
+  &__link {
+    position: absolute;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 12px;
+    z-index: 99999;
+
+    a {
+      color: #000;
+      grid-column: 6/13;
+
+      @include tablet{
+        grid-column: 1/13;
+      }
+    }
+
+  }
+
+  &__col-1-6 {
+    grid-column: 1/6;
+
+    @include tablet {
+      grid-column: 1/13;
+      grid-row: 2;
+    }
+  }
+
+  &__col-6-13 {
+    grid-column: 6/13;
+    display: grid;
+
+    @include tablet {
+      grid-column: 1/13;
+    }
+  }
+
+  &__text {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  &__right {
+    text-align:right;
+  }
+
+  &__bottom {
+    align-self: end
+  }
+
+}
+
+
+

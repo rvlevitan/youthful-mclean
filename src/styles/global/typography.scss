@@ -1,0 +1,56 @@
+h1, h2, h3, h4, h5, p {
+    margin:0;
+    padding:0;
+    font-style: normal;
+    font-weight: normal;
+}
+
+a {
+    color: var(--color);
+    text-decoration:none;
+}
+
+a:focus {
+    outline: 0;
+}
+
+h1 {
+    font-size: get-vw(180px);
+    line-height: get-vw(156px);
+    letter-spacing: -0.01em;
+
+    @include mobile {
+        font-size: 19.2vw;
+        line-height: 86.5%;
+    }
+}
+
+h2 {
+    font-size: get-vw(90px);
+    line-height: get-vw(84px);
+    letter-spacing: -0.008em;
+
+    @include mobile {
+        font-size: 9.6vw;
+        line-height: 9.6vw;
+        letter-spacing: -0.006em;
+    }
+}
+
+h3 {
+    font-size: rem(30px);
+    line-height: rem(36px);
+    letter-spacing: 0.002em;
+
+    @include small-desktop {
+        font-size: rem(24px);
+        line-height: rem(30px);
+        letter-spacing: 0.002em;
+    }
+
+    @include mobile {
+        font-size: rem(18px);
+        line-height: rem(24px);
+        letter-spacing: 0.002em;
+    }
+}
